@@ -1,0 +1,38 @@
+<odoo>
+    <!-- Vue liste pour comodite.gestion -->
+    <record model="ir.ui.view" id="view_comodite_gestion_tree">
+        <field name="name">comodite.gestion.tree</field>
+        <field name="model">comodite.gestion</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="room_service"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vue formulaire pour comodite.gestion (si nécessaire) -->
+    <record model="ir.ui.view" id="view_comodite_gestion_form">
+        <field name="name">comodite.gestion.form</field>
+        <field name="model">comodite.gestion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="room_service"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action pour afficher les vues liste et formulaire de comodite.gestion -->
+    <record id="action_comodite_gestion" model="ir.actions.act_window">
+        <field name="name">Commodités</field>
+        <field name="res_model">comodite.gestion</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_id': ref('view_comodite_gestion_tree'), 'view_mode': 'tree'}), (0, 0, {'view_id': ref('view_comodite_gestion_form'), 'view_mode': 'form'})]"/>
+    </record>
+
+    <!-- Menu pour accéder à l'action comodite.gestion -->
+    <menuitem id="menu_comodite_gestion" name="Gestion des Commodités" parent="bat_menu" action="action_comodite_gestion" sequence="40"/>
+</odoo>

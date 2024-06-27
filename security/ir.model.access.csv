@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acces_gestion_batiment,gestion.batiment,model_gestion_batiment,base.group_user,1,1,1,1
+acces_chbr_gestion,chbr.gestion,model_chbr_gestion,base.group_user,1,1,1,1
+acces_comodite_gestion,comodite.gestion,model_comodite_gestion,base.group_user,1,1,1,1
+acces_client_gestion,client.gestion,model_client_gestion,base.group_user,1,1,1,1
+acces_reserve_gestion,reserve.gestion,model_reserve_gestion,base.group_user,1,1,1,1
+acces_payement_gestion,payement.gestion,model_payement_gestion,base.group_user,1,1,1,1
+acces_epaces_gestion,epaces.gestion,model_epaces_gestion,base.group_user,1,1,1,1
+

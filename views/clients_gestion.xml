@@ -1,0 +1,44 @@
+<odoo>
+    <!-- Vue liste pour client.gestion -->
+    <record id="view_client_gestion_tree" model="ir.ui.view">
+        <field name="name">client.gestion.tree</field>
+        <field name="model">client.gestion</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="id_numero"/>
+                <field name="nbr_reservation"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vue formulaire pour client.gestion -->
+    <record id="view_client_gestion_form" model="ir.ui.view">
+        <field name="name">client.gestion.form</field>
+        <field name="model">client.gestion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                        <field name="id_numero"/>
+                        <field name="nbr_reservation"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action pour afficher les vues liste et formulaire de client.gestion -->
+    <record id="action_client_gestion" model="ir.actions.act_window">
+        <field name="name">Clients</field>
+        <field name="res_model">client.gestion</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_id': ref('view_client_gestion_tree'), 'view_mode': 'tree'}), (0, 0, {'view_id': ref('view_client_gestion_form'), 'view_mode': 'form'})]"/>
+    </record>
+
+    <!-- Menu pour accéder à l'action client.gestion -->
+    <menuitem id="menu_client_gestion" name="Gestion des Clients" parent="bat_menu" action="action_client_gestion" sequence="30"/>
+</odoo>

@@ -1,0 +1,39 @@
+<odoo>
+    <record model="ir.ui.view" id="view_chbr_gestion_tree">
+        <field name="name">chbr.gestion.tree</field>
+        <field name="model">chbr.gestion</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nbr_pieces"/>
+                <field name="numro_chambre"/>
+                <field name="chmabre_type"/>
+                <field name="statut"/>
+                <field name="prix"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_chbr_gestion_form">
+        <field name="name">chbr.gestion.form</field>
+        <field name="model">chbr.gestion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nbr_pieces"/>
+                        <field name="numro_chambre"/>
+                        <field name="chmabre_type"/>
+                        <field name="statut"/>
+                        <field name="prix"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_chbr_gestion" model="ir.actions.act_window">
+        <field name="name">Chambres</field>
+        <field name="res_model">chbr.gestion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

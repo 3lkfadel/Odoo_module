@@ -1,0 +1,41 @@
+<odoo>
+    <record model="ir.ui.view" id="view_reservation_gestion_tree">
+        <field name="name">reserve.gestion.tree</field>
+        <field name="model">reserve.gestion</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type_de_chambre"/>
+                <field name="date_debut"/>
+                <field name="date_fin"/>
+                <field name="numero_de_chambre"/>
+                <field name="clients"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_reservation_gestion_form">
+        <field name="name">reserve.gestion.form</field>
+        <field name="model">reserve.gestion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="type_de_chambre"/>
+                        <field name="date_debut"/>
+                        <field name="date_fin"/>
+                        <field name="numero_de_chambre"/>
+                        <field name="clients"/>
+                        <field name="comodite"/>
+                        <field name="payement"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_reservation_gestion" model="ir.actions.act_window">
+        <field name="name">Réservations</field>
+        <field name="res_model">reserve.gestion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

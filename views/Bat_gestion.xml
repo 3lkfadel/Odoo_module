@@ -1,0 +1,81 @@
+<odoo>
+    <!-- Vue liste pour gestion.batiment -->
+    <record id="view_gestion_batiment_tree" model="ir.ui.view">
+        <field name="name">gestion.batiment.tree</field>
+        <field name="model">gestion.batiment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="Bat_ID"/>
+                <field name="Ville"/>
+                <field name="batiment_proprie"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vue formulaire pour gestion.batiment -->
+    <record id="view_gestion_batiment_form" model="ir.ui.view">
+        <field name="name">gestion.batiment.form</field>
+        <field name="model">gestion.batiment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="Bat_ID"/>
+                        <field name="Ville"/>
+                        <field name="batiment_proprie"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action pour la vue gestion.batiment -->
+    <record id="action_gestion_batiment" model="ir.actions.act_window">
+        <field name="name">Gestion des Batiments</field>
+        <field name="res_model">gestion.batiment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Action pour chbr.gestion -->
+    <record id="action_chbr_gestion" model="ir.actions.act_window">
+        <field name="name">Chambres</field>
+        <field name="res_model">chbr.gestion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Action pour client.gestion -->
+    <record id="action_client_gestion" model="ir.actions.act_window">
+        <field name="name">Clients</field>
+        <field name="res_model">client.gestion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+     <!-- Action pour client.comodite -->
+    <record id="action_comodite_comodite" model="ir.actions.act_window">
+        <field name="name">comodite</field>
+        <field name="res_model">comodite.gestion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+     <!-- Action pour client.comodite -->
+    <record id="action_gestion_reservation" model="ir.actions.act_window">
+        <field name="name">reservation</field>
+        <field name="res_model">reserve.gestion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    
+
+    <!-- Menu principal -->
+    <menuitem id="bat_menu" name="Gestion des Batiments" sequence="10"/>
+
+    <!-- Sous-menus pour chaque gestion -->
+    <menuitem id="bat_gestion" name="  Batiments" parent="bat_menu" action="action_gestion_batiment" sequence="10"/>
+    <menuitem id="chbr_gestion" name="  Chambres" parent="bat_menu" action="action_chbr_gestion" sequence="20"/>
+    <menuitem id="client_gestion" name="  Clients" parent="bat_menu" action="action_client_gestion" sequence="30"/>
+    <menuitem id="client_reservation" name="  reservation" parent="bat_menu" action="action_gestion_reservation" sequence="30"/>
+
+</odoo>

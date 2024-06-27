@@ -1,0 +1,35 @@
+<odoo>
+    <!-- Vue liste pour payement.gestion -->
+    <record id="view_payement_gestion_tree" model="ir.ui.view">
+        <field name="name">payement.gestion.tree</field>
+        <field name="model">payement.gestion</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type_de_payement"/>
+                <field name="statut_de_payement"/>
+                <field name="montant"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vue formulaire pour payement.gestion -->
+    <record id="view_payement_gestion_form" model="ir.ui.view">
+        <field name="name">payement.gestion.form</field>
+        <field name="model">payement.gestion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="type_de_payement"/>
+                        <field name="statut_de_payement"/>
+                        <field name="montant"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+
+   
+</odoo>

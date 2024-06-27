@@ -1,0 +1,49 @@
+<odoo>
+    <!-- Vue liste pour hr.employee -->
+    <record id="view_hr_employee_tree_custom" model="ir.ui.view">
+        <field name="name">hr.employee.tree.custom</field>
+        <field name="model">hr.employee</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="work_email"/>
+                <field name="work_phone"/>
+                <field name="department_id"/>
+                <field name="job_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vue formulaire pour hr.employee -->
+    <record id="view_hr_employee_form_custom" model="ir.ui.view">
+        <field name="name">hr.employee.form.custom</field>
+        <field name="model">hr.employee</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="work_email"/>
+                        <field name="work_phone"/>
+                        <field name="department_id"/>
+                        <field name="job_id"/>
+                        <field name="address_home_id"/>
+                        <field name="mobile_phone"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action pour hr.employee -->
+    <record id="action_hr_employee_custom" model="ir.actions.act_window">
+        <field name="name">Employés</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('view_hr_employee_tree_custom')}), (0, 0, {'view_mode': 'form', 'view_id': ref('view_hr_employee_form_custom')})]"/>
+    </record>
+
+    <!-- Menu pour hr.employee -->
+    <menuitem id="menu_hr_employee_custom" name="Gestion du Personnel" parent="your_parent_menu_id" action="action_hr_employee_custom"/>
+</odoo>
+

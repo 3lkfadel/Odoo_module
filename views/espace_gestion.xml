@@ -1,0 +1,16 @@
+<odoo>
+
+    
+    <record model="ir.ui.view" id="hotel_gestion.list">
+      <field name="name">epaces_gestion</field>
+      <field name="model">epaces.gestion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="type_de_d_espace"/>
+          <field name="statut_de_espace"/>
+          
+        </tree>
+      </field>
+    </record>     
+
+</odoo>
