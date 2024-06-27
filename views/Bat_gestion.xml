@@ -70,7 +70,7 @@
     
 
     <!-- Menu principal -->
-    <menuitem id="bat_menu" name="Gestion des Batiments" sequence="10"/>
+    <menuitem id="bat_menu" name="Gestion Hotel" sequence="10"/>
 
     <!-- Sous-menus pour chaque gestion -->
     <menuitem id="bat_gestion" name="  Batiments" parent="bat_menu" action="action_gestion_batiment" sequence="10"/>

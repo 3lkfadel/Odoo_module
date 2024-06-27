@@ -4,9 +4,10 @@
         <field name="model">chbr.gestion</field>
         <field name="arch" type="xml">
             <tree>
+
+                <field name="chmabre_type"/>
                 <field name="nbr_pieces"/>
                 <field name="numro_chambre"/>
-                <field name="chmabre_type"/>
                 <field name="statut"/>
                 <field name="prix"/>
             </tree>
@@ -20,9 +21,12 @@
             <form>
                 <sheet>
                     <group>
+                        
+                        
+                        <field name="chmabre_type"/>
                         <field name="nbr_pieces"/>
                         <field name="numro_chambre"/>
-                        <field name="chmabre_type"/>
+
                         <field name="statut"/>
                         <field name="prix"/>
                     </group>
